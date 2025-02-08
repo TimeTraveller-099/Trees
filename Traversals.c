@@ -17,30 +17,23 @@ Tree *createBSTNode(Tree *root, int data)
         printf("Memory allocation failed!\n");
         return NULL;
     }
+
     newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
 
     if (root == NULL)
-    {
         return newNode;
-    }
 
     // If the VALUE is already present, return the TREE as it is.
     if (root->data == data)
-    {
         return root;
-    }
 
     // Left Insertion
     if (data < root->data)
-    {
         root->left = createBSTNode(root->left, data);
-    }
     else
-    {
         root->right = createBSTNode(root->right, data);
-    }
 
     // Return the current ROOT
     return root;
